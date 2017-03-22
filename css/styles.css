@@ -1,0 +1,40 @@
+.main-grid {
+    max-width: 960px;
+}
+
+.maxed-width {
+    width: 100%;
+}
+
+.overflow-visible {
+    overflow: visible
+}
+
+.select-container {
+    overflow-y: scroll;
+    max-height: 210px;
+}
+
+.select-container::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.select-container::-webkit-scrollbar:vertical {
+    width: 11px;
+}
+
+.select-container::-webkit-scrollbar:horizontal {
+    height: 11px;
+}
+
+.select-container::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    border: 2px solid white;
+    /* should match background, can't be transparent */
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.select-container::-webkit-scrollbar-track {
+    background-color: #fff;
+    border-radius: 8px;
+}

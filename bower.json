@@ -1,0 +1,33 @@
+{
+  "name": "capetangjs-demo",
+  "homepage": "https://github.com/rezkyatinnov/capetangjs-demo",
+  "description": "Demo App for CapetangJS",
+  "main": "index.html",
+  "keywords": [
+    "text-to-speech",
+    "WebSpeech",
+    "API",
+    "speech",
+    "synthesis"
+  ],
+  "authors": [
+    "Rezkya Tinnov <mailme@rezkyatinnov.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "moment": "^2.17.1",
+    "underscore": "^1.8.3",
+    "material-design-lite": "^1.3.0",
+    "material-design-icons": "^3.0.1",
+    "capetang": "^0.2.0"
+  }
+}
