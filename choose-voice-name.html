@@ -12,8 +12,25 @@
 
 <body>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-        <header class="mdl-layout__header" w3-include-html="header.html"></header>
-        <div class="mdl-layout__drawer" w3-include-html="navbar.html"></div>
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <span class="mdl-layout-title">CapetangJS Demo</span>
+                <div class="mdl-layout-spacer"></div>
+                <nav class="mdl-navigation mdl-layout--large-screen-only">
+                    <a class="mdl-navigation__link" href="index.html">Default</a>
+                    <a class="mdl-navigation__link" href="choose-voice-name.html">Choose Name</a>
+                    <a class="mdl-navigation__link" href="advance-config.html">Advanced</a>
+                </nav>
+            </div>
+        </header>
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">CapetangJS Demo</span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="index.html">Default</a>
+                <a class="mdl-navigation__link" href="choose-voice-name.html">Choose Name</a>
+                <a class="mdl-navigation__link" href="advance-config.html">Advanced</a>
+            </nav>
+        </div>
 
         <main class="mdl-layout__content">
             <div class="page-content">
@@ -46,12 +63,19 @@
                 </div>
             </div>
         </main>
-        <footer class="mdl-mini-footer" w3-include-html="footer.html"></footer>
+        <footer class="mdl-mini-footer">
+            <div class="mdl-mini-footer__left-section ">
+                <div class="mdl-logo ">CapetangJS Demo</div>
+                <ul class="mdl-mini-footer__link-list ">
+                    <li><a href="https://github.com/rezkyatinnov/capetangjs-demo">Repo</a></li>
+                    <li><a href="https://rezkyatinnov.github.io/capetangjs/">go to CapetangJS</a></li>
+                </ul>
+            </div>
+        </footer>
     </div>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/material-design-lite/material.min.js"></script>
     <script src="bower_components/capetang/capetang.js"></script>
-    <script src="js/w3data.js"></script>
     <script>
         w3IncludeHTML();
 
