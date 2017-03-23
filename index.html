@@ -72,8 +72,6 @@
     <script src="bower_components/capetang/capetang.js"></script>
     <script>
         $(function() {
-            w3IncludeHTML();
-
             $("#speak-button").on("click", function() {
                 capetang.speak($('#speech-text').val());
             });
