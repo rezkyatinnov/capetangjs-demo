@@ -1,6 +1,6 @@
 {
   "name": "capetang",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A JavaScript library for text to speech vice versa using Web Speech API",
   "main": "capetang.js",
   "authors": [
@@ -29,14 +29,13 @@
     "package.json",
     "karma.*"
   ],
-  "_release": "0.2.1",
+  "_release": "0.2.2",
   "_resolution": {
     "type": "version",
-    "tag": "0.2.1",
-    "commit": "568bb808851a2bbc41630d4f184e22b5a0c9063b"
+    "tag": "0.2.2",
+    "commit": "6d4911312a507a772cdb5097c5d1287b33347507"
   },
   "_source": "https://github.com/rezkyatinnov/capetangjs.git",
-  "_target": "^0.2.1",
-  "_originalSource": "capetang",
-  "_direct": true
+  "_target": "^0.2.2",
+  "_originalSource": "capetang"
 }
