@@ -33,18 +33,34 @@
         </div>
 
         <main class="mdl-layout__content">
-            <div class="page-content" style="height: 100%;">
+            <div class="page-content">
                 <div class="main-grid mdl-grid">
                     <div class="mdl-cell mdl-cell--12-col">
                         <div class="overflow-visible maxed-width mdl-card mdl-shadow--2dp">
                             <div class="mdl-card__title">
-                                <h2 class="mdl-card__title-text">Simple implementation!</h2>
+                                <h2 class="mdl-card__title-text">Custom Voice Configuration</h2>
                             </div>
                             <div class="overflow-visible mdl-card__supporting-text">
-                                put text below and click speak.
+                                <div class='maxed-width mdl-textfield mdl-js-textfield mdl-textfield--floating-label' id='select-voice-name'>
+                                    <input class='mdl-textfield__input' type="text" id="voiceName" value="Select Voice Name" readonly />
+                                    <label class='mdl-textfield__label' for="voiceName"> Select Voice Name</label>
+                                </div>
+                                <ul id='voiceList' class="select-container mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="select-voice-name"></ul>
+                                <p class="maxed-width">
+                                    Volume
+                                    <input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="100" tabindex="0" id='voice-volume-input' />
+                                </p>
+                                <p class="maxed-width">
+                                    Pitch
+                                    <input class="mdl-slider mdl-js-slider" type="range" min="0" max="200" value="100" tabindex="0" id='voice-pitch-input' />
+                                </p>
+                                <p class="maxed-width">
+                                    Rate
+                                    <input class="mdl-slider mdl-js-slider" type="range" min="0" max="1000" value="100" tabindex="0" id='voice-rate-input' />
+                                </p>
                                 <div class="maxed-width mdl-textfield mdl-js-textfield mdl-textfield--floating-label ">
-                                    <textarea class="mdl-textfield__input " type="text " rows="5 " id="speech-text">Hello World!</textarea>
-                                    <label class="mdl-textfield__label " for="sample5 ">Speech text</label>
+                                    <textarea class="mdl-textfield__input " type="text " rows="5 " id="speech-text"></textarea>
+                                    <label class="mdl-textfield__label " for="sample5 ">Text lines...</label>
                                 </div>
                             </div>
                             <div class="mdl-card__actions mdl-card--border ">
@@ -55,7 +71,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="mdl-layout-spacer"></div>
                 <footer class="mdl-mini-footer">
                     <div class="mdl-mini-footer__left-section ">
                         <div class="mdl-logo ">CapetangJS Demo</div>
@@ -72,10 +87,29 @@
     <script src="bower_components/material-design-lite/material.min.js"></script>
     <script src="bower_components/capetang/capetang.min.js"></script>
     <script>
+        function selectListItem(self, id, value) {
+            $('#' + id).val(value);
+            $('#' + self).click();
+        }
+
         $(function() {
-            $("#speak-button").on("click", function() {
-                capetang.speak($('#speech-text').val());
+            capetang.onVoicesReady(function(voices) {
+                var voiceListHtml = "";
+                for (i = 0; i < voices.length; i++) {
+                    voiceListHtml += ' <li class="mdl-menu__item" onclick=\'selectListItem("select-voice-name","voiceName","' + voices[i].name + '")\'>' + voices[i].name + ' ( ' + voices[i].lang + ' )</li>';
+                }
+                $("#voiceList").html(voiceListHtml);
             });
+        });
+
+        $("#speak-button").on("click", function() {
+            var voice = capetang.getVoicesByName($('#voiceName').val());
+            capetang
+                .setVoice(voice[0])
+                .setVolume($('#voice-volume-input').val() / 100)
+                .setPitch($('#voice-pitch-input').val() / 100)
+                .setRate($('#voice-rate-input').val() / 100)
+                .speak($('#speech-text').val());
         });
     </script>
 </body>

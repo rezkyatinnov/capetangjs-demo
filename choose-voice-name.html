@@ -17,7 +17,7 @@
                 <span class="mdl-layout-title">CapetangJS Demo</span>
                 <div class="mdl-layout-spacer"></div>
                 <nav class="mdl-navigation mdl-layout--large-screen-only">
-                    <a class="mdl-navigation__link" href="index.html">Default</a>
+                    <a class="mdl-navigation__link" href="index.html">Hello World!</a>
                     <a class="mdl-navigation__link" href="choose-voice-name.html">Choose Name</a>
                     <a class="mdl-navigation__link" href="advance-config.html">Advanced</a>
                 </nav>
@@ -26,7 +26,7 @@
         <div class="mdl-layout__drawer">
             <span class="mdl-layout-title">CapetangJS Demo</span>
             <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" href="index.html">Default</a>
+                <a class="mdl-navigation__link" href="index.html">Hello World!</a>
                 <a class="mdl-navigation__link" href="choose-voice-name.html">Choose Name</a>
                 <a class="mdl-navigation__link" href="advance-config.html">Advanced</a>
             </nav>
@@ -38,7 +38,7 @@
                     <div class="mdl-cell mdl-cell--12-col">
                         <div class="overflow-visible maxed-width mdl-card mdl-shadow--2dp">
                             <div class="mdl-card__title">
-                                <h2 class="mdl-card__title-text">Speak!</h2>
+                                <h2 class="mdl-card__title-text">Example with Select Voice</h2>
                             </div>
                             <div class="overflow-visible mdl-card__supporting-text">
                                 <div class='maxed-width mdl-textfield mdl-js-textfield mdl-textfield--floating-label' id='select-voice-name'>
@@ -61,17 +61,17 @@
                         </div>
                     </div>
                 </div>
+                <footer class="mdl-mini-footer">
+                    <div class="mdl-mini-footer__left-section ">
+                        <div class="mdl-logo ">CapetangJS Demo</div>
+                        <ul class="mdl-mini-footer__link-list ">
+                            <li><a href="https://github.com/rezkyatinnov/capetangjs-demo">repo</a></li>
+                            <li><a href="https://rezkyatinnov.github.io/capetangjs/">go to CapetangJS</a></li>
+                        </ul>
+                    </div>
+                </footer>
             </div>
         </main>
-        <footer class="mdl-mini-footer">
-            <div class="mdl-mini-footer__left-section ">
-                <div class="mdl-logo ">CapetangJS Demo</div>
-                <ul class="mdl-mini-footer__link-list ">
-                    <li><a href="https://github.com/rezkyatinnov/capetangjs-demo">Repo</a></li>
-                    <li><a href="https://rezkyatinnov.github.io/capetangjs/">go to CapetangJS</a></li>
-                </ul>
-            </div>
-        </footer>
     </div>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/material-design-lite/material.min.js"></script>
@@ -84,7 +84,6 @@
 
         $(function() {
             capetang.onVoicesReady(function(voices) {
-                console.log(voices);
                 var voiceListHtml = "";
                 for (i = 0; i < voices.length; i++) {
                     voiceListHtml += ' <li class="mdl-menu__item" onclick=\'selectListItem("select-voice-name","voiceName","' + voices[i].name + '")\'>' + voices[i].name + ' ( ' + voices[i].lang + ' )</li>';
